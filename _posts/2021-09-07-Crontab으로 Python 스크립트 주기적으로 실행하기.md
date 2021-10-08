@@ -1,10 +1,8 @@
 ---
 title: Crontab으로 Python 스크립트 주기적으로 실행하기
-Date: 2021/09/06
 categories: Linux
+layout: post
 ---
-
-
 
 주기적으로 외부 API를 통해 데이터를 수집하여, Bigquery에 적재하고 싶다.
 CentOS 서버에서, 주기적으로 Python 스크립트를 실행하여 해결해 보자.
@@ -23,4 +21,5 @@ CentOS 서버에서, 주기적으로 Python 스크립트를 실행하여 해결�
 3. cron 재시작
    1. 재시작해야 적용됨
    2. `service cron restart`
+   3. CentOS일 경우, `service crond restart`
 
