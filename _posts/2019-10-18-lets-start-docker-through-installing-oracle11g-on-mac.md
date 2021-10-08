@@ -18,9 +18,7 @@ Docker의 개념과 기본 명령어들을 공부해보자.
 
 
 # Docker가 뭐요?
-일단 [Nomad Coders](https://www.youtube.com/channel/UCUpJs89fSBXNolQGOYKn0YQ/about)의 아래 영상을 본 다음에,<br>
-    {% youtube chnCcGCTyBg %}
-
+일단 [Nomad Coders](https://www.youtube.com/channel/UCUpJs89fSBXNolQGOYKn0YQ/about)의 영상을 본 다음에,
 좋은 소개 자료들을 읽어보자. 
 * [Docker 공식 문서 / Docker Overview](https://docs.docker.com/engine/docker-overview/)
 * [Docker 공식 문서 / Container 개념 소개 페이지](https://www.docker.com/resources/what-Container)
