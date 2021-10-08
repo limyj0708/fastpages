@@ -1,8 +1,7 @@
 ---
 title: <Docker> Mac에 Oracle DB 설치하기로 Docker 시작하기 
-date: 2019/10/18
 category: 학습_정리
-comments: true
+layout: post
 ---
 
 새로운 도구의 필요성은 언제나 갑자기 찾아온다.
