@@ -1,8 +1,7 @@
 ---
+layout: post.
+categories: [Python]
 title: <Python> Iterable, Iterator, Generator - 너희는 누구니?
-date: 2019/10/12
-category: Python
-comments: true
 ---
 [Iterables vs Iterators vs Generators](https://nvie.com/posts/iterators-vs-generators/)
 를 보고 그대로 작성하였다.
