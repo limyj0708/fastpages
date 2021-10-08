@@ -1,5 +1,5 @@
 ---
-layout: post.
+layout: post
 categories: [Python]
 title: <Python> Iterable, Iterator, Generator - 너희는 누구니?
 ---
