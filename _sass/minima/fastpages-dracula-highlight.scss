@@ -4,16 +4,16 @@
 $dt-gray-dark: #fffbf2;  // Background
 $dt-code-cell-background: #fffbf2;
 $dt-gray: #44475a;       // Current Line & Selection
-$dt-gray-light: #f8f8f2; // Foreground
-$dt-blue: #6272a4;       // Comment
-$dt-cyan: #8be9fd;
-$dt-green: #50fa7b;
-$dt-orange: #ffb86c;
-$dt-pink: #ff79c6;
-$dt-purple: #bd93f9;
-$dt-red: #ff5555;
+$dt-black: #000000; // Foreground
+$dt-blue: #304ca1;       // Comment
+$dt-cyan: #1dabca;
+$dt-green: #02ca34;
+$dt-orange: #cf7f29;
+$dt-pink: #d32387;
+$dt-purple: #671ccf;
+$dt-red: #d81919;
 $dt-yellow: #f1fa8c;
-$dt-green-light: rgb(172, 229, 145);
+$dt-green-dark: rgb(50, 153, 3);
 
 .language-python + .language-plaintext {
     border-left: 1px solid grey;
@@ -24,7 +24,7 @@ $dt-green-light: rgb(172, 229, 145);
 [class^="language-"]:not(.language-plaintext) pre,
 [class^="language-"]:not(.language-plaintext) code {
     background-color: $dt-code-cell-background !important;
-    color: $dt-gray-light;
+    color: $dt-black;
 }
 
 .language-python + .language-plaintext code { background-color: white !important; }
@@ -73,10 +73,10 @@ $dt-green-light: rgb(172, 229, 145);
 
 .highlight {
     background: $dt-code-cell-background !important;
-    color: $dt-gray-light !important;
+    color: $dt-black !important;
     pre, code {
      background: $dt-code-cell-background;
-     color: $dt-gray-light;
+     color: $dt-black;
      font-size: 110%;
     }
    
@@ -95,7 +95,7 @@ $dt-green-light: rgb(172, 229, 145);
     .sr,
     .s1,
     .ss {
-         color:rgb(231, 153, 122);
+         color:rgb(224, 64, 0);
     }
   
     .go {
@@ -126,13 +126,13 @@ $dt-green-light: rgb(172, 229, 145);
     .py,
     .w,
     .bp {
-      color: $dt-gray-light;
+      color: $dt-black;
       background-color: $dt-code-cell-background !important;
     }
  
     .p {
          font-weight: bold;
-         color: rgb(102, 217, 239);
+         color: rgb(0, 163, 196);
  }
   
     .ge {
@@ -152,7 +152,7 @@ $dt-green-light: rgb(172, 229, 145);
     }
 
     .c1 {
-      color: gray;
+      color: rgb(48, 48, 48);
     }
   
     .kd,
@@ -183,7 +183,7 @@ $dt-green-light: rgb(172, 229, 145);
     .nc,
     .nf
      {
-      color: $dt-green-light;
+      color: $dt-green-dark;
     }
   
     .k,
@@ -199,7 +199,7 @@ $dt-green-light: rgb(172, 229, 145);
     }
  
     .kc {
-         color: $dt-green-light;   
+         color: $dt-green-dark;   
     }
   
     .m,
