@@ -34,8 +34,6 @@ $dt-green-dark: rgb(50, 153, 3);
 .input_area pre, .input_area div {
     margin-bottom:1.0rem !important;
     margin-top:1.5rem !important;
-    padding-bottom:0 !important;
-    padding-top:0 !important;
     background: #F5F5F5 !important;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -56,6 +54,7 @@ $dt-green-dark: rgb(50, 153, 3);
     border-left: 1px solid grey;
     margin-left: 1rem !important;
     font-size: 16px;
+    background-color: #F0EEFF;
 }
 
 .code_cell table { width: auto; }
@@ -159,17 +158,6 @@ $dt-green-dark: rgb(50, 153, 3);
     .vi,
     .vm {
       color: #1E8F1E;
-    }
-  
-    .kd,
-    .nb,
-    .nl,
-    .nv,
-    .vc,
-    .vg,
-    .vi,
-    .vm {
-      font-style: italic;
     }
   
     .fm,
