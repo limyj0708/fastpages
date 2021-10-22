@@ -1,8 +1,7 @@
 // Override Syntax Highlighting In Minima With the Dracula Theme: https://draculatheme.com/
 // If you wish to override any of this CSS, do so in _sass/minima/custom-styles.css
  
-$dt-gray-dark: #fffbf2;  // Background
-$dt-code-cell-background: #fffbf2;
+$dt-code-cell-background: #F5F5F5;
 $dt-gray: #44475a;       // Current Line & Selection
 $dt-black: #000000; // Foreground
 $dt-blue: #304ca1;       // Comment
@@ -37,7 +36,7 @@ $dt-green-dark: rgb(50, 153, 3);
     margin-top:1.5rem !important;
     padding-bottom:0 !important;
     padding-top:0 !important;
-    background: #fffbf2 !important;
+    background: #F5F5F5 !important;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     font-family: Menlo, Monaco, Consolas, "Lucida Console", Roboto, Ubuntu, monospace;
@@ -95,7 +94,7 @@ $dt-green-dark: rgb(50, 153, 3);
     .sr,
     .s1,
     .ss {
-         color:rgb(224, 64, 0);
+         color: #C54444;
     }
   
     .go {
@@ -130,11 +129,6 @@ $dt-green-dark: rgb(50, 153, 3);
       background-color: $dt-code-cell-background !important;
     }
  
-    .p {
-         font-weight: bold;
-         color: rgb(0, 163, 196);
- }
-  
     .ge {
       text-decoration: underline;
     }
@@ -151,8 +145,8 @@ $dt-green-dark: rgb(50, 153, 3);
       color: $dt-blue;
     }
 
-    .c1 {
-      color: rgb(48, 48, 48);
+    .c1 { /* 주석 */
+      color:#488585;
     }
   
     .kd,
@@ -164,7 +158,7 @@ $dt-green-dark: rgb(50, 153, 3);
     .vg,
     .vi,
     .vm {
-      color: $dt-cyan;
+      color: #1E8F1E;
     }
   
     .kd,
@@ -208,8 +202,8 @@ $dt-green-dark: rgb(50, 153, 3);
     .mh,
     .mi,
     .mo,
-    .il {
-      color: $dt-purple;
+    .il {/*숫자*/
+      color: #57B157;
     }
   
     .gd {
