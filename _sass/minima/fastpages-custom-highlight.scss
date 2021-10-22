@@ -44,8 +44,6 @@ $dt-green-dark: rgb(50, 153, 3);
 .output_area pre, .output_area div {
     margin-bottom:1rem !important;
     margin-top:0rem !important;
-    padding-bottom:0 !important;
-    padding-top:0 !important;
 }
 .input_area pre {
     border-left: 1px solid lightcoral;
@@ -54,7 +52,7 @@ $dt-green-dark: rgb(50, 153, 3);
     border-left: 1px solid grey;
     margin-left: 1rem !important;
     font-size: 16px;
-    background-color: #F0EEFF;
+    background-color: #F7F6FF;
 }
 
 .code_cell table { width: auto; }
