@@ -33,7 +33,7 @@ $dt-green-dark: rgb(50, 153, 3);
 
 .input_area pre, .input_area div {
     margin-bottom:1.0rem !important;
-    margin-top:1.5rem !important;
+    margin-top:1.0rem !important;
     background: #F5F5F5 !important;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -50,9 +50,9 @@ $dt-green-dark: rgb(50, 153, 3);
 }
 .output_area pre {
     border-left: 1px solid grey;
-    margin-left: 1rem !important;
+    /*margin-left: 1rem !important;*/
     font-size: 16px;
-    background-color: #F7F6FF;
+    background-color: #ffffff;
 }
 
 .code_cell table { width: auto; }
