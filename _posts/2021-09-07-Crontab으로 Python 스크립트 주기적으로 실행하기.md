@@ -14,9 +14,9 @@ CentOS 서버에서, 주기적으로 Python 스크립트를 실행하여 해결�
    2. 시간설정은 아래 링크에서 직관적으로 확인 가능
       * [Crontab.guru - The cron schedule expression editor](https://crontab.guru/#30_8_*_*_*)
 
-   ```Shell
-   30 8 * * * /usr/local/bin/python3.9 /home/limyj0708/cw_daily_bigquery/cw_daily.py
-   ```
+```shell
+30 8 * * * /usr/local/bin/python3.9 /home/limyj0708/cw_daily_bigquery/cw_daily.py
+```
 
 3. cron 재시작
    1. 재시작해야 적용됨
