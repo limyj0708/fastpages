@@ -5,7 +5,7 @@ image: images/favicon-32x32.png
 ---
 
 {% if site.categories.size > 0 %}
-<h2>Contents</h2>
+<h1>Contents</h1>
 
   {% assign categories = "" | split:"" %}
   {% for c in site.categories %}
@@ -15,7 +15,7 @@ image: images/favicon-32x32.png
 
   <ul>
   {% for category in categories %}
-    <li><a href="https://limyj0708.github.io/fastpages/categories/#{{ category }}">{{ category }}</a></li>
+    <li><h4><a href="https://limyj0708.github.io/fastpages/categories/#{{ category }}">{{ category }}</a></h4></li>
   {% endfor %}
   </ul>
 {% endif %}
