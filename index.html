@@ -3,7 +3,6 @@ layout: home
 search_exclude: true
 image: images/favicon-32x32.png
 ---
-
 {% if site.categories.size > 0 %}
 <h1>Contents</h1>
 
@@ -15,7 +14,13 @@ image: images/favicon-32x32.png
 
   <ul>
   {% for category in categories %}
-    <li><h4><a href="https://limyj0708.github.io/fastpages/categories/#{{ category }}">{{ category }}</a></h4></li>
+    <li>
+      <h4>
+        <a href="https://limyj0708.github.io/fastpages/categories/#{{ category }}">
+          {{ category }}
+        </a>
+      </h4>
+    </li>
   {% endfor %}
   </ul>
 {% endif %}
