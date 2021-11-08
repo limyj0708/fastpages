@@ -263,6 +263,10 @@ pre code {
   font-size: 15px !important;
 }
 
+.language-plaintext { // markdown에서 단순 코드 라인의 활자 크기
+  font-size: 20px;
+}
+
 // Handle youtube videos, so they dont break on mobile devices
 .youtube-iframe-wrapper {
   position: relative;
