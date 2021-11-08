@@ -3,5 +3,20 @@ layout: home
 search_exclude: true
 image: images/favicon-32x32.png
 ---
-# Tags
+
+{% if site.categories.size > 0 %}
+<h2>Contents</h2>
+
+  {% assign categories = "" | split:"" %}
+  {% for c in site.categories %}
+    {% assign categories = categories | push: c[0] %}
+  {% endfor %}
+  {% assign categories = categories | sort_natural %}
+
+  <ul>
+  {% for category in categories %}
+    <li><a href="#{{ category }}">{{ category }}</a></li>
+  {% endfor %}
+  </ul>
+
 # Posts
