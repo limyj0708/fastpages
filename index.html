@@ -3,9 +3,8 @@ layout: home
 search_exclude: true
 image: images/favicon-32x32.png
 ---
-{% if site.categories.size > 0 %}
 <h1>Contents</h1>
-
+{% if site.categories.size > 0 %}
   {% assign categories = "" | split:"" %}
   {% for c in site.categories %}
     {% assign categories = categories | push: c[0] %}
@@ -16,7 +15,7 @@ image: images/favicon-32x32.png
   {% for category in categories %}
     <li>
       <h4>
-        <a href="https://limyj0708.github.io/fastpages/categories/#{{ category }}">
+        <a class="home_category_list" href="https://limyj0708.github.io/fastpages/categories/#{{ category }}">
           {{ category }}
         </a>
       </h4>
