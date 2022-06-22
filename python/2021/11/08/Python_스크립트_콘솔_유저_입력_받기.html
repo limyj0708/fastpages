@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Python 스크립트 Console 유저 입력 받기 | Lim’s Code Archive</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Python 스크립트 Console 유저 입력 받기" />
+<meta name="author" content="limyj0708" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="아이스 카페라떼 매니아" />
+<meta property="og:description" content="아이스 카페라떼 매니아" />
+<link rel="canonical" href="https://limyj0708.github.io/fastpages/python/2021/11/08/Python_%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EC%BD%98%EC%86%94_%EC%9C%A0%EC%A0%80_%EC%9E%85%EB%A0%A5_%EB%B0%9B%EA%B8%B0.html" />
+<meta property="og:url" content="https://limyj0708.github.io/fastpages/python/2021/11/08/Python_%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EC%BD%98%EC%86%94_%EC%9C%A0%EC%A0%80_%EC%9E%85%EB%A0%A5_%EB%B0%9B%EA%B8%B0.html" />
+<meta property="og:site_name" content="Lim’s Code Archive" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-11-08T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"https://limyj0708.github.io/fastpages/python/2021/11/08/Python_%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EC%BD%98%EC%86%94_%EC%9C%A0%EC%A0%80_%EC%9E%85%EB%A0%A5_%EB%B0%9B%EA%B8%B0.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://limyj0708.github.io/fastpages/python/2021/11/08/Python_%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EC%BD%98%EC%86%94_%EC%9C%A0%EC%A0%80_%EC%9E%85%EB%A0%A5_%EB%B0%9B%EA%B8%B0.html"},"author":{"@type":"Person","name":"limyj0708"},"headline":"Python 스크립트 Console 유저 입력 받기","dateModified":"2021-11-08T00:00:00-06:00","datePublished":"2021-11-08T00:00:00-06:00","description":"아이스 카페라떼 매니아","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://limyj0708.github.io/fastpages/feed.xml" title="Lim's Code Archive" /><link rel="shortcut icon" type="image/x-icon" href="/fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+
+<script type="text/javascript" src="/fastpages/assets/js/toc.js"></script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/fastpages/">Lim&#39;s Code Archive</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/fastpages/about/">About Me</a><a class="page-link" href="/fastpages/search/">Search</a><a class="page-link" href="/fastpages/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  backgroundColor: 'rgb(255, 82, 82)',
+  textColor: '#fff'
+})</script>
+
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Python 스크립트 Console 유저 입력 받기</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-11-08T00:00:00-06:00" itemprop="datePublished">
+        Nov 8, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">limyj0708</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/fastpages/categories/#Python">Python</a>
+        
+      
+      </p>
+    
+
+    
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-11-08-Python_스크립트_콘솔_유저_입력_받기.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Python 스크립트를 실행 시, Console 창에서 유저의 입력을 받으려면?</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;아무거나 입력하세요 : &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;메아리 : </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>메아리 : 맛있는 거 먹고 싶다
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>입력되는 값은 기본적으로 string이다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">text1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;아무거나 입력하세요1 : &quot;</span><span class="p">)</span>
+<span class="n">text2</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;아무거나 입력하세요2 : &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;메아리 : </span><span class="si">{</span><span class="n">text1</span> <span class="o">+</span> <span class="n">text2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">text1</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>메아리 : 12
+&lt;class &#39;str&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>다른 자료형으로 쓰려면 형변환을 해야 함</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">int1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;아무거나 입력하세요1 : &quot;</span><span class="p">))</span>
+<span class="n">int2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;아무거나 입력하세요2 : &quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;메아리 : </span><span class="si">{</span><span class="n">int1</span> <span class="o">+</span> <span class="n">int2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>메아리 : 3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>유저가 잘못된 값을 입력할 때를 대비한 예외처리</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;숫자를 입력하세요: &#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;입력하신 숫자는 : &#39;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;숫자를 넣으라니까?&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>숫자를 넣으라니까?
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>올바른 값을 입력할 때까지 작동하는 예외처리 루프</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;숫자를 입력하세요: &#39;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;입력하신 숫자는 : &#39;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+        <span class="k">break</span>
+
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;숫자를 넣으라니까?&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>숫자를 넣으라니까?
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>숫자를 넣으라니까?
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>숫자를 넣으라니까?
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>입력하신 숫자는 :  11
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>한 줄에 여러 값 입력받기</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">position</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;이름, 나이, 직급을 입력하세요.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> 
+    <span class="c1"># 입력값을 쪼갬, 입력값은 스페이스로 구분되어야 함</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;이름 :&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;나이 :&quot;</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;직급 :&quot;</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>이름 : 홍길돌
+나이 : 35
+직급 : 과장
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>리스트를 입력받는다면</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">entered_list</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;직원들의 나이를 입력하세요 : &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;직원들이 나이 리스트_문자열 : &#39;</span><span class="p">,</span><span class="n">entered_list</span><span class="p">)</span>
+
+<span class="n">num_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="n">entered_list</span><span class="p">))</span>
+    <span class="c1"># map 함수로 리스트의 모든 원소에 대해 int 형변환 시행</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;직원들의 나이 리스트_숫자변환: &#39;</span><span class="p">,</span><span class="n">num_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;평균 나이:&#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">num_list</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">num_list</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>직원들이 나이 리스트_문자열 :  [&#39;24&#39;, &#39;45&#39;, &#39;34&#39;, &#39;37&#39;, &#39;33&#39;, &#39;29&#39;]
+직원들의 나이 리스트_숫자변환:  [24, 45, 34, 37, 33, 29]
+평균 나이: 33.666666666666664
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>여러 줄로 입력받기</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">total_input</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;직원들의 이름을 쓰세요 : &quot;</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
+        <span class="n">total_input</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">break</span>
+        <span class="c1"># 아무것도 입력하지 않고 엔터를 누르면 if문에서 false로 처리되어</span>
+        <span class="c1"># break를 만나게 됨</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;입력된 직원들의 이름 목록 :&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">total_input</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>직원들의 이름을 쓰세요 : 
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>입력된 직원들의 이름 목록 :
+[&#39;홍길동&#39;, &#39;둘리&#39;, &#39;마이콜&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="limyj0708/fastpages"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/fastpages/python/2021/11/08/Python_%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EC%BD%98%EC%86%94_%EC%9C%A0%EC%A0%80_%EC%9E%85%EB%A0%A5_%EB%B0%9B%EA%B8%B0.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/fastpages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/fastpages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/fastpages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>아이스 카페라떼 매니아</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/limyj0708" target="_blank" title="limyj0708"><svg class="svg-icon grey"><use xlink:href="/fastpages/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
